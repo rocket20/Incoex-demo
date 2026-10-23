@@ -169,53 +169,6 @@
       body { background: #041941; }
       .login-screen { box-shadow: none; }
     }
-
-    /* ============================================
-       ADAPTACIÓN RESPONSIVE PARA CELULAR
-       Solo reglas CSS adicionales: no se altera
-       el HTML, los estilos originales ni el JS.
-       ============================================ */
-    @media screen and (max-width: 600px) {
-      html, body {
-        width: 100%;
-        overflow-x: hidden;
-      }
-
-      body {
-        display: block;
-        min-height: 100vh;
-        min-height: 100dvh;
-      }
-
-      .login-screen {
-        width: 100%;
-        max-width: none;
-        min-height: 100vh;
-        min-height: 100dvh;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: none;
-      }
-
-      /* Evita que Safari haga zoom al tocar los campos. */
-      .field {
-        font-size: max(16px, 2.82cqw);
-      }
-    }
-
-    /* En horizontal, conserva el diseño en formato vertical
-       sin reducirlo a un tamaño diminuto. Se puede desplazar. */
-    @media screen and (max-height: 500px) and (orientation: landscape) {
-      body {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-      }
-      .login-screen {
-        width: min(100vw, 390px);
-        min-height: 0;
-      }
-    }
   </style>
 </head>
 <body>
@@ -268,11 +221,7 @@
 
     document.getElementById('loginForm').addEventListener('submit', (event) => {
       event.preventDefault();
-      showToast('Formulario listo: conecta aquí tu servicio de inicio de sesión.');
-    });
-    document.getElementById('registerLink').addEventListener('click', (event) => {
-      event.preventDefault();
-      showToast('Conecta aquí tu pantalla de registro.');
+      window.location.href = 'homecliente.html'; // Navegación de demostración (sin autenticación real).
     });
   </script>
 </body>
