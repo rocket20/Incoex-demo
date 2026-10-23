@@ -170,7 +170,7 @@
 </head>
 <body>
   <main class="phone" aria-label="Registro de empresa de INCOEX">
-    <button type="button" class="back" aria-label="Volver" onclick="history.back()"></button>
+    <button type="button" class="back" aria-label="Volver" onclick="window.location.href='index.html'"></button>
     <form id="companyForm" novalidate>
       <label class="sr-only" for="fullName">Nombre completo</label>
       <input class="field f1" id="fullName" name="fullName" placeholder="Nombre completo" autocomplete="name" required>
@@ -264,7 +264,7 @@
       }
       if(!fileInput.files.length){message('Adjuntá los documentos requeridos.');return;}
       if(!document.getElementById('terms').checked){message('Aceptá los términos para continuar.');return;}
-      message('Datos validados. El registro está listo para conectar con el servidor de INCOEX.');
+      window.location.href='homecliente.html'; // Navegación de demostración (no guarda datos).
     });
     const dialog=document.getElementById('dialog');
     document.querySelectorAll('[data-modal]').forEach(el=>el.addEventListener('click',()=>{
